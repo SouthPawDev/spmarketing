@@ -1,0 +1,18 @@
+{% extends "login/base.html" %}
+{% block title %}
+    Welcome to SP Marketing
+{% endblock %}
+{% block body_block %}
+    <main role="main" class="container">
+          <div class="jumbotron">
+            <h2>Welcome to </h2>
+              <h1>Marketing Portal</h1>
+            <p class="lead">Servpro Marketing Representative, here is where you can find all you need.</p>
+            <a class="btn btn-lg btn-primary" href="{% url 'login:login' %}" role="button">Login to access &raquo;</a>
+             <div>
+                 <h6>Click below to Signup</h6>
+                 <a class="btn btn-secondary btn-sm" href="#">Signup</a>
+             </div>
+          </div>
+    </main>
+{% endblock %}
