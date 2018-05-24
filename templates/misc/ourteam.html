@@ -1,0 +1,14 @@
+{% extends 'login/base.html' %}
+{% block title %}Our Team{% endblock %}
+{% block body_block %}
+    {% if request.user.is_authenticated %}
+    <h1> Meet our Sales and Marketing Representatives</h1>
+
+
+
+
+{% else %}
+    <h2>Something went wrong with your authentication</h2>
+    <p>Please <a class="btn btn-primary" href="{% url 'login:login' %}">Login</a> to have full access</p>
+{% endif %}
+{% endblock %}

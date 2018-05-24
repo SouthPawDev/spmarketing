@@ -8,10 +8,14 @@
             <h2>Welcome to </h2>
               <h1>Marketing Portal</h1>
             <p class="lead">Servpro Marketing Representative, here is where you can find all you need.</p>
-            <a class="btn btn-lg btn-primary" href="{% url 'login:login' %}" role="button">Login to access &raquo;</a>
+              {% if request.user.is_authenticated %}
+              <a class="btn btn-lg btn-primary" href="{% url 'home' %}" role="button">access</a>
+              {% else %}
+              <a class="btn btn-lg btn-primary" href="{% url 'login:login' %}" role="button">Login to access &raquo;</a>
              <div>
                  <h6>Click below to Signup</h6>
                  <a class="btn btn-secondary btn-sm" href="{% url 'login:signup' %}">Signup</a>
+            {% endif %}
              </div>
           </div>
     </main>

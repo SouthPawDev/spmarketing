@@ -3,7 +3,8 @@
 
 {% block body_block %}
     {% if request.user.is_authenticated %}
-        <h1>Is Authenticated</h1>
+        <h1>You are already Logged in</h1>
+        <a class="btn btn-primary" href="{% url 'home' %}">Go to Home</a>
     {% else %}
         <h2>Login</h2>
             <form method="post">
