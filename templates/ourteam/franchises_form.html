@@ -1,0 +1,20 @@
+{% extends 'login/base.html' %}
+{% block title %}
+    {% if not form.instace.pk %}
+            Create Franchise
+        {% else %}
+            Update Franchise
+        {% endif %}
+{% endblock %}
+{% block body_block %}
+    <h1>{% if not form.instace.pk %}
+            Create Franchise
+        {% else %}
+            Update Franchise
+        {% endif %}</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input class="btn btn-primary" type="submit" value="Submit">
+    </form>
+{% endblock %}

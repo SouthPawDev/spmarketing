@@ -16,7 +16,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from login import views as login_views
-from ourteam import views as team_views
 
 
 urlpatterns = [
@@ -24,5 +23,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('login.urls', namespace='login')),
     path('home/', login_views.HomeView.as_view(), name='home'),
-    path('ourteam', team_views.OurTeam.as_view(), name='ourteam')
+    path('team/', include('ourteam.urls', namespace='ourteam'))
 ]
