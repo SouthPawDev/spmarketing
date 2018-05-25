@@ -1,0 +1,11 @@
+{% extends 'login/base.html' %}
+{% block title %}Our Franchises{% endblock %}
+{% block body_block %}
+    {% if request.user.is_authenticated %}
+        <h1>Welcome to the Franchise Detail Page</h1>
+        <h2>Franchise details:</h2>
+        <p>Name: {{ franchise_detail.name }}</p>
+        <p>Location: {{ franchise_detail.location }}</p>
+        <p>Phone Number: {{ franchise_detail.phone_number }}</p>
+    {% endif %}
+{% endblock %}

@@ -4,7 +4,7 @@
     <h1>Welcome to a list of all our Franchises</h1>
     <ol>
         {% for franchise in franchises %}
-            <h2><li><a href="{{ franchise.id }}">{{ franchise.name }}</a></li></h2>
+            <h2><li><a href="{% url 'ourteam:franchise_detail' pk=franchise_detail.pk %}">{{ franchise.name }}</a></li></h2>
         {% endfor %}
     </ol>
 

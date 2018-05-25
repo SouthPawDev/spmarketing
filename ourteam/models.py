@@ -3,7 +3,7 @@ from django.urls import reverse
 # Create your models here.
 
 
-class Franchises(models.Model):
+class Franchise(models.Model):
     name = models.CharField(max_length=256)
     location = models.CharField(max_length=256)
     phone_number = models.CharField(max_length=12)
@@ -15,7 +15,7 @@ class Franchises(models.Model):
         return reverse("ourteam", kwargs={'pk': self.pk})
 
 
-class Cars(models.Model):
+class Car(models.Model):
     brand = models.CharField(max_length=256)
     car_model = models.CharField(max_length=256)
     car_number = models.IntegerField()
@@ -28,8 +28,8 @@ class Smr(models.Model):
     smr_pic = models.ImageField(upload_to='smr_pics')
     name = models.CharField(max_length=256)
     territory = models.CharField(max_length=256)
-    car = models.ForeignKey(Cars, related_name='smrs', on_delete='PROTECT')
-    franchise = models.ForeignKey(Franchises, related_name='smrs', on_delete='PROTECT')
+    car = models.ForeignKey(Car, related_name='smrs', on_delete='PROTECT')
+    franchise = models.ForeignKey(Franchise, related_name='smrs', on_delete='PROTECT')
 
     def __str__(self):
         return self.name

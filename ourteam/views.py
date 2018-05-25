@@ -42,28 +42,28 @@ class SmrDeleteView(DeleteView):
 
 class FranchiseListView(ListView):
     context_object_name = 'franchises'
-    model = models.Franchises
+    model = models.Franchise
 
 
 class FranchiseDetailView(DetailView):
     context_object_name = 'franchise_detail'
-    model = models.Franchises
-    template_name = 'ourteam/franchises_detail.html'
+    model = models.Franchise
+    template_name = 'ourteam/franchise_detail.html'
 
 
 class FranchiseCreateView(CreateView):
     fields = ('name', 'location', 'phone_number')
-    model = models.Franchises
+    model = models.Franchise
     success_url = reverse_lazy('ourteam:franchise_list')
 
 
 class FranchiseUpdateView(UpdateView):
     fields = 'phone_number'
-    model = models.Franchises
+    model = models.Franchise
 
 
 class FranchiseDeleteView(DeleteView):
-    model = models.Franchises
+    model = models.Franchise
     success_url = reverse_lazy('ourteam:ourteam')
 
 
@@ -72,14 +72,14 @@ class FranchiseDeleteView(DeleteView):
 
 class CarCreateView(CreateView):
     fields = ('brand', 'car_model', 'car_number')
-    model = models.Cars
+    model = models.Car
 
 
 class CarUpdateView(UpdateView):
     fields = 'car_number'
-    model = models.Cars
+    model = models.Car
 
 
 class CarDeleteView(DeleteView):
-    model = models.Cars
+    model = models.Car
     success_url = reverse_lazy('ourteam:ourteam')
